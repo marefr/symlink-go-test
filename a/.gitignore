@@ -1,0 +1,2 @@
+/pkg/extensions/*
+!/pkg/extensions/extensions.go
