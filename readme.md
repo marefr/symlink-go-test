@@ -1,6 +1,6 @@
 # vscode-go extension with test on save and symbolic links
 
-Test repo for reproducing issue regarding test on save when package/file is a symbolic linc.
+Test repo for reproducing issue regarding the vscode-go extension with test on save feature enabled when saved package/file is a symbolic link.
 
 **Settings:**
 ```json
@@ -38,9 +38,15 @@ no required module provides package github.com/marefr/symlink-go-test/a/pkg/exte
 ```
 
 6. Open a terminal in vs code (current directory should be the workspace, `<repo>/a`)
-7. Paste command from output window above
+7. Paste command from output window above and run test to see that it works as expected
 ```
 ~/go/src/github.com/marefr/symlink-go-test/a
 ❯ /usr/local/go/bin/go test github.com/marefr/symlink-go-test/a/pkg/extensions/something
 ok      github.com/marefr/symlink-go-test/a/pkg/extensions/something    0.003s
 ```
+8. Remove symbolic links
+```
+cd ./b
+./undev.sh
+```
+
